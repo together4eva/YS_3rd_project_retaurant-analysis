@@ -1,0 +1,15 @@
+        button {
+            opacity: 0.5;
+            transform: translateY(-4px);
+            box-shadow: 0 4px #999;
+          }
+          button:active {
+            transform: translateY(0);
+            box-shadow: 0 0 #999;
+          }
+
+.td-figure {
+    progress_bar1 {
+        transform: rotateX(45deg);
+    }
+}

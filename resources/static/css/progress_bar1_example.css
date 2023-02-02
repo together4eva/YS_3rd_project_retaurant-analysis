@@ -1,0 +1,47 @@
+body {
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.progress_bar1 {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 380px;
+}
+
+.progress_bar1-value {
+  animation: load25 3s normal forwards;
+  box-shadow: 0 10px 40px -10px #fff;
+  border-radius: 100px;
+  background: #fff;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes load25 {
+  0% { width: 0; }
+  100% { width: 25%; }
+}
+@keyframes load50 {
+  0% { width: 0; }
+  100% { width: 50%; }
+}
+@keyframes load75 {
+  0% { width: 0; }
+  100% { width: 75%; }
+}
+@keyframes load100 {
+  0% { width: 0; }
+  100% { width: 100%; }
+}

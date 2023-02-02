@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body style="display:flex; justify-content: center;">
+code another fix
+  <div style="display:flex; width:4000px; height:1000px; border:1px; background-color:black; justify-content: center;">
+      <div style="display:flex; width:80%; height:80%; background-color:white; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="display:flex; width:40%; height:40%; background-color:blue;">
+            <div id="myDiv"></div>
+        </div>
+          <div style="display:flex; width:40%; height:40%; background-color:red;">
+              <div id="myDivTable"></div>
+          </div>
+      </div>
+  </div>
+
+<script>
+    var data = [{
+    y:['Marc', 'Henrietta', 'Jean', 'Claude', 'Jeffrey', 'Jonathan', 'Jennifer', 'Zacharias'],
+      x: [90, 40, 60, 80, 75, 92, 87, 73],
+      type: 'bar',
+      orientation: 'h'}]
+
+    var layout = {
+        title: 'Always Display the Modebar',
+        showlegend: false}
+
+    Plotly.newPlot('myDiv', data, layout, {displayModeBar: true})
+
+    var values = [
+      ['Salaries', 'Office', 'Merchandise', 'Legal', '<b>TOTAL</b>'],
+      [1200000, 20000, 80000, 2000, 12120000],
+      [1300000, 20000, 70000, 2000, 130902000],
+      [1300000, 20000, 120000, 2000, 131222000],
+      [1400000, 20000, 90000, 2000, 14102000]]
+
+var dataTable = [{
+  type: 'table',
+  header: {
+    values: [["<b>EXPENSES</b>"], ["<b>Q1</b>"],
+				 ["<b>Q2</b>"], ["<b>Q3</b>"], ["<b>Q4</b>"]],
+    align: ["left", "center"],
+    line: {width: 1, color: '#506784'},
+    fill: {color: '#119DFF'},
+    font: {family: "Arial", size: 12, color: "white"}
+  },
+  cells: {
+    values: values,
+    align: ["left", "center"],
+    line: {color: "#506784", width: 1},
+	 fill: {color: ['#25FEFD', 'white']},
+    font: {family: "Arial", size: 11, color: ["#506784"]}
+  }
+}]
+
+Plotly.newPlot('myDivTable', dataTable);
+
+
+
+
+</script>
+
+</body>
+</html>

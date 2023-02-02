@@ -1,0 +1,22 @@
+.grid_example {
+    display : grid;
+    grid-template-columns: 500px 200px;
+        	/* grid-template-columns: 1fr 1fr 1fr */
+        	/* grid-template-columns: repeat(3, 1fr) */
+        	/* grid-template-columns: 200px 1fr */
+        	/* grid-template-columns: 100px 200px auto */
+
+    grid-template-rows: 500px 500px;
+        	/* grid-template-rows: 1fr 1fr 1fr */
+        	/* grid-template-rows: repeat(3, 1fr) */
+        	/* grid-template-rows: 200px 1fr */
+        	/* grid-template-rows: 100px 200px auto */
+}
+.item_1 {
+    background-color : gray;
+}
+.item_2 {
+
+}
+.item_3 {
+}

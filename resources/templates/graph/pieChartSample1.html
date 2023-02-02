@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/css/graph0002.css">
+</head>
+<body>
+<!--
+    action : @Conroller에 목적지인 위치 (@GetMapping)
+    <input type="text" name="inputdata"> name : KEY값이며 Controller에서 받는 @RequestParam의 Value값
+-->
+<form action="graph0002" method="get">
+    <input type="text" name="inputData">
+    <button>전송</button>
+</form>
+<div class="container">
+    <div class="donut" data-percent="85.4"></div>
+    <!--   th:attrappend :
+         th : 타임리프 문법 씀
+         attrappend : css 스타일을 덮어 씀 (기존에 있는 속성은 덮어씀)
+         -->
+    <div class="circular_graph" th:attrappend="style=${data} " data-percent="52.2"></div>
+</div>
+<!--
+class = css에서 .선택자명
+-->
+</body>
+</html>

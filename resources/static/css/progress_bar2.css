@@ -1,0 +1,97 @@
+.progress_bar2_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(222,222,222,1);
+}
+.progress_bar2_progressbar{
+    height: 50px;
+    width: 380px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(-40deg);
+}
+.progress_bar2_side{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254,254,254,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+.progress_bar2_side__bottom{
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    box-shadow: 10px 5px 50px 5px rgba(0,0,0,.25);
+}
+.progress_bar2_side__top{
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+.progress_bar2_side__back{
+    transform: translateZ(-50px);
+}
+
+.progress_bar2_side__left {
+    width: 50px;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    background-color: rgba(0,139,139,.5);
+}
+.progress_bar2_side__fill{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0,139,139,.5);
+    transition: .3s all linear;
+}
+
+
+.progress_bar2_progressbar__text{
+    display: inline-block;
+    position: relative;
+    top: -100px;
+    left: 50px;
+    font-size: 22px;
+    padding: 5px;
+    background-color: rgba(0,139,139,.5);
+    cursor: pointer;
+    margin-right: 17px;
+    font-family: Arial;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 1px -2px 0px 0px rgba(56,121,121,1),
+                2px -2px 0px 0px rgba(56,121,121,1),
+                3px -2px 0px 0px rgba(56,121,121,1);
+}
+.progress_bar2_progressbar__text:last-of-type{
+    margin-right: 0;
+}
+.progress_bar2_progressbar__checker{
+    display: none;
+}
+
+#zero:checked ~ div > .progress_bar2_side__fill{
+    width: 0%;
+}
+#twenty-five:checked ~ div > .progress_bar2_side__fill{
+    width: 25%;
+}
+#fifty:checked ~ div > .progress_bar2_side__fill{
+    width: 50%;
+}
+#seventy-five:checked ~ div > .progress_bar2_side__fill{
+    width: 75%;
+}
+#hundred:checked ~ div > .progress_bar2_side__fill{
+    width: 100%;
+}
+
+.progress_bar2_progressbar__checker:checked + .progress_bar2_progressbar__text{
+    background-color: rgba(0,139,139,1);
+}

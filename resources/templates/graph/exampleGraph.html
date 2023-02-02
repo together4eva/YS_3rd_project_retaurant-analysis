@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+</head>
+<body>
+  <div style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;">
+    <div style="display: flex;
+      height: 900px;
+      width: 865px;
+      flex-direction: column;
+    justify-content: center;">
+      <div style="
+        width: 100%;
+        height: 50%;">
+        <div id="myDiv"></div>
+      </div>
+      <div style="
+        width: 100%;
+        height: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+">
+        <div id="myDivTable"></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+<!--chart1-->
+
+  var data = [{
+    type: 'scattergeo',
+    mode: 'markers',
+    locations: ['KOR', 'JPN', 'CHN', 'RUS'],
+    marker: {
+        size: [50, 30, 15, 10],
+        color: [50, 50, 40, 50],
+        cmin: 0,
+        cmax: 50,
+        colorscale: 'Reds',
+        colorbar: {
+            title: 'Some rate',
+            ticksuffix: '%',
+            showticksuffix: 'last'
+        },
+        line: {
+            color: 'black'
+        }
+    },
+    name: 'asia data'
+}];
+
+var layout = {
+    'geo': {
+        'scope': 'asia',
+        'resolution': 50
+    }
+};
+
+Plotly.newPlot('myDiv', data, layout);
+
+<!--chart2-->
+
+var gd = document.getElementById('myDiv');
+var dataTable = [{type: 'funnel', name: 'Montreal',
+  y: ["Website visit", "Downloads", "Potential customers", "Requested price"],
+  x: [120, 60, 30, 20],
+  textinfo: "value+percent initial"},
+  {
+     type: 'funnel',name: 'Toronto',
+    y: ["Website visit", "Downloads", "Potential customers", "Requested price", "invoice sent"],
+    x: [100, 60, 40, 30, 20], textposition: "inside", textinfo: "value+percent previous"},
+  {
+    type: 'funnel',name: 'Vancouver',
+    y: ["Website visit", "Downloads", "Potential customers", "Requested price", "invoice sent", "closed deals"],
+    x: [90, 70, 50, 30, 10, 5], textposition: "outside", textinfo: "value+percent total"}];
+
+var layoutTable = {margin: {l: 130, r: 0}, width: 600, funnelmode: "stack", showlegend: 'true'}
+
+Plotly.newPlot('myDivTable', dataTable, layoutTable);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>ebook</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+</head>
+
+<body>
+
+<script>
+$.ajax({
+    url: 'book_encode.csv' ,
+    dataType: 'text',
+    contentType: 'application/x-www-form-urlencoded;charset=utf-8'
+}).done(successFunction);
+
+function successFunction(data) {
+  var allRows = data.split(/\r?\n|\r/);
+  console.log(data);
+  console.log('한글 테스트');
+  var table = '<table>';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+      table += '<thead>';
+      table += '<tr>';
+    } else {
+      table += '<tr>';
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if (singleRow === 0) {
+        table += '<th>';
+        table += rowCells[rowCell];
+        table += '</th>';
+      } else {
+        table += '<td>';
+        table += rowCells[rowCell];
+        table += '</td>';
+      }
+    }
+    if (singleRow === 0) {
+      table += '</tr>';
+      table += '</thead>';
+      table += '<tbody>';
+    } else {
+      table += '</tr>';
+    }
+  }
+  table += '</tbody>';
+  table += '</table>';
+  $('body').append(table);
+}
+</script>
+</body>
+</html>

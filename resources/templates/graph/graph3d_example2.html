@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+<script src='https://cdn.plot.ly/plotly-2.16.1.min.js'></script>
+<script>
+  function getrandom(num , mul) {
+    var value = [ ];
+    for ( i=0; i <= num; i++ ) {
+        var rand = Math.random() * mul;
+        value.push(rand);
+    }
+    return value;
+}
+
+var trace1 =  {
+     opacity: 0.5,
+     color: 'rgba(255,127,80,0.7)',
+     type: 'scatter3d',
+     mode: 'lines+markers',
+     x: [3,2,5,7,3,5],
+     y: [13,32,25,57,13,15],
+     z: [32,21,51,71,31,51],
+     scene: "scene1"
+    };
+
+var layout = {
+    scene1: {
+        domain: {
+            x: [0.0,  0.5],
+            y: [0.5, 1.0]
+        },},
+    scene2: {
+        domain: {
+            x: [0.5, 1],
+            y: [0.5, 1.0]
+        }},
+     scene3: {
+        domain: {
+            x: [0.0,  0.33],
+            y: [0, 0.5]
+        },},
+    scene4: {
+        domain: {
+            x: [0.33, 0.66],
+            y: [0, 0.5]
+        }},
+    scene5: {
+        domain: {
+            x: [0.66, 0.99],
+            y: [0, 0.5]
+        },},
+  height: 600,
+   margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 0,
+    pad: 0
+  },
+}
+
+Plotly.newPlot('myDiv', [trace1], layout);
+</script>
+</body>
+</html>

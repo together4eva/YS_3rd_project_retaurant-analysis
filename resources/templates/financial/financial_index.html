@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="/financial_index" method="post">
+        return_operand : <input th:type="text" name="return_operand">
+        price : <input th:type="text" name="price">
+        financial_day : <input th:type="text" name="financial_day">
+        <button>작성하기</button>
+    </form>
+</div>
+        Financial List
+        <div>
+            <table>
+                <tr>
+                    <td>return_operand</td>
+                    <td>price</td>
+                    <td>financial_day</td>
+                    <td>updateTime</td>
+                </tr>
+                <tr th:each="item : ${financialList}">
+                    <td th:text="${item.getReturn_operand}"></td>
+                    <td th:text="${item.getPrice}"></td>
+                    <td th:text="${item.getFinancial_day}"></td>
+                    <td th:text="${item.getUpdate_time}"></td>
+                </tr>
+            </table>
+        </div>
+
+
+
+
+</body>
+</html>

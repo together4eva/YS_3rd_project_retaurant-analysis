@@ -1,0 +1,70 @@
+.container {
+    display : grid;
+
+    grid-template-columns: 200px 200px 200px;
+    	/* grid-template-columns: 1fr 1fr 1fr */
+    	/* grid-template-columns: repeat(3, 1fr) */
+    	/* grid-template-columns: 200px 1fr */
+    	/* grid-template-columns: 100px 200px auto */
+
+    	grid-template-rows: 200px 200px 200px;
+    	/* grid-template-rows: 1fr 1fr 1fr */
+    	/* grid-template-rows: repeat(3, 1fr) */
+    	/* grid-template-rows: 200px 1fr */
+    	/* grid-template-rows: 100px 200px auto */
+}
+.graph0001 {
+
+}
+.graph0002 {
+
+}
+.graph0003 {
+
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: blue;
+    font-weight: 600;
+    font-size: .8rem;
+}
+
+.progress-bar .progress {
+    width: 72%;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    background-color: #4F98FF;
+    color: #111;
+}
+
+.donut {
+    width: calc(100% - 16px);
+    padding-bottom: calc(100% - 16px);
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    transition: background .3s ease-in-out;
+    background: conic-gradient(#3F8BC9 0% 72%, #F2F2F2 72% 100%);
+}
+
+.donut::before {
+    color: #fff;
+    width: 70%;
+    padding: calc(35% - .64vw) 0;
+    background: #264057;
+    border-radius: 50%;
+    position: absolute;
+    left: 15%;
+    top: 15%;
+    display: block;
+    content: attr(data-percent)'%';
+    transform: skew(-0.03deg);
+    margin: auto;
+    font-size: 1.1vw;
+    font-size: 2vw;
+    padding: calc(35% - 1.3vw) 0;
+}
